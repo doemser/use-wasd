@@ -1,16 +1,7 @@
 import { useState, useEffect } from "react";
 
 export default function useWASD(initialValue) {
-  const [keyboard, setKeyboard] = useState(
-    initialValue
-      ? initialValue
-      : {
-          w: false,
-          a: false,
-          s: false,
-          d: false,
-        }
-  );
+  const [keyboard, setKeyboard] = useState(initialValue ? initialValue : {});
 
   useEffect(() => {
     function handleKeyUp(event) {
