@@ -2,25 +2,26 @@
 
 a super easy hook to check which keys are currently pressed on your keyboard
 
+```bash
+npm install use-wasd
+```
+
+This hook returns an object containing the pressed keys and if they are currently pressed
+
 ```js
 import useWASD from "use-wasd";
 
 export default function KeysPressed() {
-  // you can initialize it, or you just leave it empty
-  const keys = useWASD({
-    w: false,
-    a: false,
-    s: false,
-    d: false,
-  });
+  // You can initialize, or you just leave it empty
+  const keyboard = useWASD({ w: false, a: false, s: false, d: false });
 
   return (
     <>
       <h2>Keys pressed</h2>
-      {Object.keys(keys).map((key) => {
+      {Object.keys(keyboard).map((key) => {
         return (
           <span key={key} style={{ margin: "10px" }}>
-            {key}: {keys[key] ? "true" : "false"}
+            {key}: {keyboard[key] ? "true" : "false"}
           </span>
         );
       })}
@@ -29,4 +30,4 @@ export default function KeysPressed() {
 }
 ```
 
-[some more examples]("https://codesandbox.io/s/usewasd-hook-jwvks5?file=/src/App.js")
+[some more examples](https://codesandbox.io/s/usewasd-hook-jwvks5?file=/src/App.js)
