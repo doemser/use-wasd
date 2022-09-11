@@ -1,0 +1,22 @@
+{
+  "name": "use-wasd",
+  "version": "1.0.0",
+  "description": "a super easy hook to check which keys are currently pressed on your keyboard",
+  "keywords": [
+    "keyboard",
+    "track",
+    "keys",
+    "wasd",
+    "gaming"
+  ],
+  "author": "doemser",
+  "main": "use-wasd.js",
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-scripts": "4.0.0"
+  },
+  "scripts": {
+    "test": "react-scripts test --env=jsdom"
+  }
+}
