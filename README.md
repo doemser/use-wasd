@@ -6,7 +6,7 @@ a super easy hook to check which keys are currently pressed on your keyboard
 npm install use-wasd
 ```
 
-This hook returns an object containing the pressed keys and if they are currently pressed
+This hook returns an object containing the keys that have been pressed and if they are currently pressed
 
 ```js
 import useWASD from "use-wasd";
@@ -30,4 +30,6 @@ export default function KeysPressed() {
 }
 ```
 
-[some more examples](https://codesandbox.io/s/usewasd-hook-jwvks5?file=/src/App.js)
+[Some examples](https://codesandbox.io/s/usewasd-hook-jwvks5?file=/src/App.js)
+
+[r3f example](https://codesandbox.io/s/usewasd-hook-jwvks5?file=/src/App.js)
