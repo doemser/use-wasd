@@ -32,4 +32,4 @@ export default function KeysPressed() {
 
 [Some examples](https://codesandbox.io/s/usewasd-hook-jwvks5?file=/src/App.js)
 
-[r3f example](https://codesandbox.io/s/usewasd-hook-jwvks5?file=/src/App.js)
+[r3f example](https://codesandbox.io/s/use-wasd-hook-in-r3f-s0pomg?file=/src/App.js)
