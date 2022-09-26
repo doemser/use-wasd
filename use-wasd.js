@@ -15,9 +15,9 @@ export default function useWASD(initialValue = {}) {
     function handleKey(event, bool) {
       const pressedKey = event.key.toLowerCase();
       if (event.code === "Space") {
-        setKeyboard({ ...keyboard, space: bool });
+        setKeyboard(previousState => ({ ...previousState, space: bool }));
       } else {
-        setKeyboard({ ...keyboard, [pressedKey]: bool });
+        setKeyboard(previousState =>({ ...previousState, [pressedKey]: bool }));
       }
     }
 
@@ -28,7 +28,7 @@ export default function useWASD(initialValue = {}) {
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
     };
-  }, [keyboard]);
+  }, []);
 
   return keyboard;
 }
