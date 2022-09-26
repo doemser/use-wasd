@@ -14,7 +14,7 @@ export default function useWASD(initialValue = {}) {
 
     function handleKey(event, bool) {
       const pressedKey = event.key.toLowerCase();
-      if (event.keyCode === 32) {
+      if (event.code === "Space") {
         setKeyboard({ ...keyboard, space: bool });
       } else {
         setKeyboard({ ...keyboard, [pressedKey]: bool });
