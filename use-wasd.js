@@ -5,20 +5,21 @@ export default function useWASD(initialValue = {}) {
 
   useEffect(() => {
     function handleKeyUp(event) {
-      handleKey(event, false);
+      handleKey(event.key, false);
     }
 
     function handleKeyDown(event) {
-      handleKey(event, true);
+      handleKey(event.key, true);
     }
 
-    function handleKey(event, bool) {
-      const pressedKey = event.key.toLowerCase();
-      if (event.code === "Space") {
-        setKeyboard(previousState => ({ ...previousState, space: bool }));
-      } else {
-        setKeyboard(previousState =>({ ...previousState, [pressedKey]: bool }));
-      }
+    function handleKey(key, bool) {
+      // Key might be "" in case of the space bar being pressed
+      const key_ = key.toLowerCase().trim() || "space";
+
+      setKeyboard((previousState) => ({
+        ...previousState,
+        [key_]: bool
+      }));
     }
 
     document.addEventListener("keydown", handleKeyDown);
