@@ -1,24 +1,25 @@
 import { useState, useEffect } from "react";
 
-export default function useWASD(initialValue) {
-  const [keyboard, setKeyboard] = useState(initialValue ? initialValue : {});
+export default function useWASD(initialValue = {}) {
+  const [keyboard, setKeyboard] = useState(initialValue);
 
   useEffect(() => {
     function handleKeyUp(event) {
-      handleKey(event, false);
+      handleKey(event.key, false);
     }
 
     function handleKeyDown(event) {
-      handleKey(event, true);
+      handleKey(event.key, true);
     }
 
-    function handleKey(event, bool) {
-      const pressedKey = event.key.toLowerCase();
-      if (event.keyCode === 32) {
-        setKeyboard({ ...keyboard, space: bool });
-      } else {
-        setKeyboard({ ...keyboard, [pressedKey]: bool });
-      }
+    function handleKey(key, bool) {
+      // Key might be "" in case of the space bar being pressed
+      const key_ = key.toLowerCase().trim() || "space";
+
+      setKeyboard((previousState) => ({
+        ...previousState,
+        [key_]: bool
+      }));
     }
 
     document.addEventListener("keydown", handleKeyDown);
@@ -28,7 +29,7 @@ export default function useWASD(initialValue) {
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
     };
-  }, [keyboard]);
+  }, []);
 
   return keyboard;
 }
