@@ -1,6 +1,6 @@
 {
   "name": "use-wasd",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "a super easy hook to check which keys are currently pressed on your keyboard",
   "keywords": [
     "react",
