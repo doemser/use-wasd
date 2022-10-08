@@ -1,6 +1,8 @@
 # use-wasd
 
-a super easy hook to check which keys are currently pressed on your keyboard
+![use-wasd](./assets/use-wasd.png)
+
+a super easy react hook to check which keys are currently pressed on your keyboard
 
 ```bash
 npm install use-wasd
