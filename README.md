@@ -1,7 +1,5 @@
 # use-wasd
 
-![use-wasd](./assets/use-wasd.gif)
-
 a super easy react hook to check which keys are currently pressed on your keyboard
 
 ```bash
