@@ -24,3 +24,7 @@
 
 # debug
 npm-debug.log*
+
+# bundling
+.parcel-chache
+dist
