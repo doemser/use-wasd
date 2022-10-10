@@ -11,6 +11,9 @@
     "wasd",
     "gaming"
   ],
+  "files": [
+    "dist"
+  ],
   "author": "doemser",
   "main": "dist/use-wasd.js",
   "source": "src/use-wasd.ts",
@@ -39,6 +42,7 @@
   "scripts": {
     "test": "react-scripts test --env=jsdom",
     "build": "parcel build",
-    "dev": "parcel watch"
+    "dev": "parcel watch",
+    "prepublish": "parcel build"
   }
 }
