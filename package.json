@@ -43,6 +43,6 @@
     "test": "react-scripts test --env=jsdom",
     "build": "parcel build",
     "dev": "parcel watch",
-    "prepublish": "parcel build"
+    "release": "parcel build && npm publish"
   }
 }
