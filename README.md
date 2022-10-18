@@ -129,7 +129,11 @@ You can call `event.preventDefault()` to prevent default actions for keys.
 const options = { preventDefault: ["arrowup", "arrowdown"] };
 ```
 
-> You can pass "all" to the array to prevent the default function for every key.
+You can also set it to `true` to prevent the default function for every key.
+
+```js
+const options = { preventDefault: true };
+```
 
 [preventDefault Example](https://codesandbox.io/s/usewasd-preventdefault-i5jb7x?file=/src/App.js)
 
