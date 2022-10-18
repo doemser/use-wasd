@@ -6,7 +6,7 @@ Easy and agnostic react hook to handle keys and key-combinations on your keyboar
 npm install use-wasd
 ```
 
-This hook returns an object containing the keys and combos states of being pressed on the keyboard.
+This hook returns an object with the keys and combos and their pressed state.
 
 ```js
 import useWASD from "use-wasd";
@@ -22,6 +22,8 @@ export default function App() {
 }
 ```
 
+[Basic Example](https://codesandbox.io/s/usewasd-basic-ljmqtr?file=/src/App.js)
+
 ---
 
 ## Options
@@ -32,7 +34,7 @@ You can pass an optional `options` object.
 const options = { allow: ["w", "a", "s", "d"] };
 
 export default function App() {
-  const {w, a ,s ,d} = useWASD(options);
+  const { w, a ,s ,d }  = useWASD(options);
   ...
 }
 ```
@@ -83,6 +85,8 @@ export default function App() {
 
 > You don´t need to also allow combos, it´s enough if the keys for the combo are allowed and not blocked.
 
+[combos Example](https://codesandbox.io/s/usewasd-combos-z9cvbe?file=/src/App.js)
+
 ---
 
 ## initialValue
@@ -97,6 +101,8 @@ const options = {
 
 > Note that the `"keydown"` event will always set keys `true`, while the `"keyup"` event will always set to `false`. Initially setting a key to `true` will not reverse the mechanism.
 
+[initialValue Example](https://codesandbox.io/s/usewasd-initialvalue-duc6ez?file=/src/App.js)
+
 ---
 
 ## preventDefault
@@ -108,6 +114,8 @@ const options = { preventDefault: ["arrowup", "arrowdown"] };
 ```
 
 > You can pass "all" to the array to prevent the default function for every key.
+
+[preventDefault Example](https://codesandbox.io/s/usewasd-preventdefault-i5jb7x?file=/src/App.js)
 
 ---
 
@@ -123,11 +131,26 @@ export default function App() {
 }
 ```
 
+[ref Example](https://codesandbox.io/s/usewasd-ref-6d52sn?file=/src/App.js)
+
 ---
 
-## Perfomance
+## Performance
 
-There are 3 ways to pass the options object:
+> We recommend destructuring the object returned by useWASD.
+
+```diff
+
+export default function App() {
+-  const keyboard  = useWASD();
++  const { w, a ,s ,d }  = useWASD();
+  ...
+}
+```
+
+> We recommend memoizing the options object.
+
+Here are 3 common examples of passing the options object:
 
 1. Declare it outside the Component.
 
@@ -156,13 +179,13 @@ export default function App() {
 ```js
 
 export default function App() {
-  const options = useRef(() => ({...}));
-  const keyboard = useWASD(options);
+  const options = useRef({...});
+  const keyboard  = useWASD(options.current);
   ...
 }
 ```
 
-Do not pass object directly into hook, this would cause unnecessary rerenders.
+Do not pass the object directly into the hook, this would cause unnecessary rerenders.
 
 ```js
 
@@ -176,6 +199,21 @@ export default function App() {
 
 ## Examples
 
-[Some examples](https://codesandbox.io/s/usewasd-hook-jwvks5?file=/src/App.js)
+[Basic Example](https://codesandbox.io/s/usewasd-basic-ljmqtr?file=/src/App.js)
 
-[r3f example](https://codesandbox.io/s/use-wasd-hook-in-r3f-s0pomg?file=/src/App.js)
+[combos Example](https://codesandbox.io/s/usewasd-combos-z9cvbe?file=/src/App.js)
+
+[initialValue Example](https://codesandbox.io/s/usewasd-initialvalue-duc6ez?file=/src/App.js)
+
+[preventDefault Example](https://codesandbox.io/s/usewasd-preventdefault-i5jb7x?file=/src/App.js)
+[ref Example](https://codesandbox.io/s/usewasd-ref-6d52sn?file=/src/App.js)
+
+[react-three-fiber / r3f - example](https://codesandbox.io/s/use-wasd-hook-in-r3f-s0pomg?file=/src/App.js)
+
+---
+
+## Learn
+
+[useWASD source](https://codesandbox.io/s/usewasd-example-collection-qm29co?file=/src/use-wasd.js)
+
+> if you are familiar with typescript, you can also find the source code on [github](https://github.com/doemser/use-wasd/blob/main/src/use-wasd.ts).
