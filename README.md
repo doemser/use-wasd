@@ -1,5 +1,8 @@
 # use-wasd
 
+[![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/use-wasd)
+[![Build Size](https://img.shields.io/bundlephobia/minzip/use-wasd?label=bundle%20size&style=flat&colorA=000000&colorB=000000)](<[https://bundlephobia.com/result?p=use-wasd](https://bundlephobia.com/package/use-wasd@2.0.1)>)
+
 Easy and agnostic react hook to handle keys and key-combinations on your keyboard.
 
 ```bash
