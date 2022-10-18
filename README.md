@@ -135,6 +135,8 @@ You can also set it to `true` to prevent the default function for every key.
 const options = { preventDefault: true };
 ```
 
+> Be aware that by doing so you can jeopardize the a11y
+
 [preventDefault Example](https://codesandbox.io/s/usewasd-preventdefault-i5jb7x?file=/src/App.js)
 
 ---
