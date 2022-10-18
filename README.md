@@ -226,9 +226,10 @@ export default function App() {
 [initialValue Example](https://codesandbox.io/s/usewasd-initialvalue-duc6ez?file=/src/App.js)
 
 [preventDefault Example](https://codesandbox.io/s/usewasd-preventdefault-i5jb7x?file=/src/App.js)
+
 [ref Example](https://codesandbox.io/s/usewasd-ref-6d52sn?file=/src/App.js)
 
-[react-three-fiber / r3f - example](https://codesandbox.io/s/use-wasd-hook-in-r3f-s0pomg?file=/src/App.js)
+[react-three-fiber / r3f Example](https://codesandbox.io/s/use-wasd-hook-in-r3f-s0pomg?file=/src/App.js)
 
 ---
 
