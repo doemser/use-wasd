@@ -26,6 +26,22 @@ export default function App() {
 
 ---
 
+### Table of Content
+
+- [Options](#options)
+  - [allow/block](#allowblock)
+  - [combos](#combos)
+  - [initialValue](#initialvalue)
+  - [preventDefault](#preventdefault)
+  - [ref](#ref)
+- [Performance](#performance)
+  - [Destructuring](#destructuring)
+  - [Memoization](#memoization)
+- [Examples](#examples)
+- [Learn](#learn)
+
+---
+
 ## Options
 
 You can pass an optional `options` object.
@@ -50,7 +66,7 @@ Available options are:
 
 ---
 
-## allow/block
+### allow/block
 
 You can and should explicitly allow or block keys.
 
@@ -67,7 +83,7 @@ const options = {
 
 ---
 
-## combos
+### combos
 
 You can define custom combos.
 
@@ -89,7 +105,7 @@ export default function App() {
 
 ---
 
-## initialValue
+### initialValue
 
 You can initially fill the object.
 
@@ -105,7 +121,7 @@ const options = {
 
 ---
 
-## preventDefault
+### preventDefault
 
 You can call `event.preventDefault()` to prevent default actions for keys.
 
@@ -119,7 +135,7 @@ const options = { preventDefault: ["arrowup", "arrowdown"] };
 
 ---
 
-## ref
+### ref
 
 By default the EventListener will be added to the `document`, if you want it to be added to another element, you can pass it as `ref`.
 
@@ -137,6 +153,8 @@ export default function App() {
 
 ## Performance
 
+### Destructuring
+
 > We recommend destructuring the object returned by useWASD.
 
 ```diff
@@ -147,6 +165,8 @@ export default function App() {
   ...
 }
 ```
+
+### Memoization
 
 > We recommend memoizing the options object.
 
@@ -214,6 +234,6 @@ export default function App() {
 
 ## Learn
 
-[useWASD source](https://codesandbox.io/s/usewasd-example-collection-qm29co?file=/src/use-wasd.js)
+[useWASD source](https://codesandbox.io/s/usewasd-plain-js-source-qm29co?file=/src/use-wasd.js)
 
 > if you are familiar with typescript, you can also find the source code on [github](https://github.com/doemser/use-wasd/blob/main/src/use-wasd.ts).
