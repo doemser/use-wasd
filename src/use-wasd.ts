@@ -1,35 +1,83 @@
-import { useState, useEffect } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from "react";
 
-export default function useWASD(initialValue: Record<string, boolean> = {}) {
-  const [keyboard, setKeyboard] = useState(initialValue);
+export interface UseWASDOptions {
+  allowed?: string[];
+  blocked?: string[];
+  combos?: Record<string, string[]>;
+  initialValue?: Record<string, boolean>;
+  preventDefault?: boolean | string[];
+  ref?: MutableRefObject<Element>;
+}
+
+function shouldTrack(options: UseWASDOptions, key: string) {
+  const allowAll = !options.allowed;
+  const isBlocked = options.blocked?.includes(key);
+  const isAllowed = allowAll || options.allowed?.includes(key);
+
+  return !(isBlocked || !isAllowed);
+}
+
+function shouldPreventDefault(
+  preventDefault: UseWASDOptions["preventDefault"],
+  key: string
+) {
+  if (Array.isArray(preventDefault)) {
+    return preventDefault?.includes(key);
+  }
+  return Boolean(preventDefault);
+}
+
+export default function useWASD(options: UseWASDOptions = {}) {
+  const [keyboard, setKeyboard] = useState(options.initialValue || {});
+
+  const keys = useRef({ ...keyboard });
 
   useEffect(() => {
-    function handleKeyUp(event: KeyboardEvent) {
-      handleKey(event.key, false);
+    function update() {
+      const matchingCombos = options.combos
+        ? Object.entries(options.combos).reduce(
+            (previousValue, [name, characters]) => ({
+              ...previousValue,
+              [name]: characters.every((character) => keys.current[character]),
+            }),
+            {}
+          )
+        : {};
+      setKeyboard({ ...keys.current, ...matchingCombos });
     }
 
-    function handleKeyDown(event: KeyboardEvent) {
-      handleKey(event.key, true);
+    function handleDown(event: KeyboardEvent) {
+      const key = event.key.toLowerCase().trim() || "space";
+      if (shouldPreventDefault(options.preventDefault, key)) {
+        event.preventDefault();
+      }
+      if (shouldTrack(options, key)) {
+        keys.current[key] = true;
+        update();
+      }
     }
 
-    function handleKey(key: string, bool: boolean) {
-      // Key might be "" in case of the space bar being pressed
-      const key_ = key.toLowerCase().trim() || "space";
-
-      setKeyboard((previousState) => ({
-        ...previousState,
-        [key_]: bool,
-      }));
+    function handleUp(event: KeyboardEvent) {
+      const key = event.key.toLowerCase().trim() || "space";
+      if (shouldPreventDefault(options.preventDefault, key)) {
+        event.preventDefault();
+      }
+      if (shouldTrack(options, key)) {
+        keys.current[key] = false;
+        update();
+      }
     }
 
-    document.addEventListener("keydown", handleKeyDown);
-    document.addEventListener("keyup", handleKeyUp);
+    const context = options.ref?.current ?? document;
+
+    context.addEventListener("keydown", handleDown);
+    context.addEventListener("keyup", handleUp);
 
     return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.removeEventListener("keyup", handleKeyUp);
+      context.removeEventListener("keydown", handleDown);
+      context.removeEventListener("keyup", handleUp);
     };
-  }, []);
+  }, [options]);
 
   return keyboard;
 }
