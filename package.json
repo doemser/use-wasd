@@ -1,6 +1,6 @@
 {
   "name": "use-wasd",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "license": "MIT",
   "description": "Easy and agnostic react hook to handle keys and key-combinations on your keyboard.",
   "keywords": [
@@ -40,7 +40,7 @@
     "type": "git",
     "url": "git+https://github.com:doemser/use-wasd.git"
   },
-  "homepage": "https://doemser.de",
+  "homepage": "http://doemser.de",
   "scripts": {
     "test": "react-scripts test --env=jsdom",
     "build": "parcel build",
