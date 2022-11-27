@@ -27,8 +27,12 @@ function shouldPreventDefault(
   return Boolean(preventDefault);
 }
 
-export default function useWASD(options: UseWASDOptions = {}) {
-  const [keyboard, setKeyboard] = useState(options.initialValue || {});
+const initialValue = {};
+
+export default function useWASD(options: UseWASDOptions = initialValue) {
+  const [keyboard, setKeyboard] = useState(
+    options.initialValue || initialValue
+  );
 
   const keys = useRef({ ...keyboard });
 

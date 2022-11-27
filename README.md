@@ -1,3 +1,5 @@
+<p align="center"><img src="https://github.com/doemser/dead-simple-react/blob/main/assets/png/use-wasd.png?raw=true"/></p>
+
 # use-wasd
 
 [![Version](https://img.shields.io/npm/v/use-wasd?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/use-wasd)
@@ -26,7 +28,7 @@ export default function App() {
 }
 ```
 
-[Basic Example](https://codesandbox.io/s/usewasd-basic-ljmqtr?file=/src/App.js)
+<a href="https://codesandbox.io/s/github/doemser/dead-simple-react/tree/main/examples/use-wasd/use-wasd-basic" target="_blank">![Try it yourself.](https://github.com/doemser/dead-simple-react/blob/main/assets/png/use-wasd-try-it-yourself.png?raw=true)</a>
 
 ---
 
@@ -105,7 +107,7 @@ export default function App() {
 
 > You don´t need to also allow combos, it´s enough if the keys for the combo are allowed and not blocked.
 
-[combos Example](https://codesandbox.io/s/usewasd-combos-z9cvbe?file=/src/App.js)
+<a href="https://codesandbox.io/s/github/doemser/dead-simple-react/tree/main/examples/use-wasd/use-wasd-combos" target="_blank">![Try it yourself.](https://github.com/doemser/dead-simple-react/blob/main/assets/png/use-wasd-try-it-yourself.png?raw=true)</a>
 
 ---
 
@@ -121,7 +123,7 @@ const options = {
 
 > Note that the `"keydown"` event will always set keys `true`, while the `"keyup"` event will always set to `false`. Initially setting a key to `true` will not reverse the mechanism.
 
-[initialValue Example](https://codesandbox.io/s/usewasd-initialvalue-duc6ez?file=/src/App.js)
+<a href="https://codesandbox.io/s/github/doemser/dead-simple-react/tree/main/examples/use-wasd/use-wasd-initial-value" target="_blank">![Try it yourself.](https://github.com/doemser/dead-simple-react/blob/main/assets/png/use-wasd-try-it-yourself.png?raw=true)</a>
 
 ---
 
@@ -141,7 +143,7 @@ const options = { preventDefault: true };
 
 > Be aware that by doing so you can jeopardize the a11y
 
-[preventDefault Example](https://codesandbox.io/s/usewasd-preventdefault-i5jb7x?file=/src/App.js)
+<a href="https://codesandbox.io/s/github/doemser/dead-simple-react/tree/main/examples/use-wasd/use-wasd-prevent-default" target="_blank">![Try it yourself.](https://github.com/doemser/dead-simple-react/blob/main/assets/png/use-wasd-try-it-yourself.png?raw=true)</a>
 
 ---
 
@@ -157,7 +159,7 @@ export default function App() {
 }
 ```
 
-[ref Example](https://codesandbox.io/s/usewasd-ref-6d52sn?file=/src/App.js)
+<a href="https://codesandbox.io/s/github/doemser/dead-simple-react/tree/main/examples/use-wasd/use-wasd-ref" target="_blank">![Try it yourself.](https://github.com/doemser/dead-simple-react/blob/main/assets/png/use-wasd-try-it-yourself.png?raw=true)</a>
 
 ---
 
@@ -229,22 +231,20 @@ export default function App() {
 
 ## Examples
 
-[Basic Example](https://codesandbox.io/s/usewasd-basic-ljmqtr?file=/src/App.js)
+[Basic Example](https://codesandbox.io/s/github/doemser/dead-simple-react/tree/main/examples/use-wasd/use-wasd-basic)
 
-[combos Example](https://codesandbox.io/s/usewasd-combos-z9cvbe?file=/src/App.js)
+[combos Example](https://codesandbox.io/s/github/doemser/dead-simple-react/tree/main/examples/use-wasd/use-wasd-combos)
 
-[initialValue Example](https://codesandbox.io/s/usewasd-initialvalue-duc6ez?file=/src/App.js)
+[initialValue Example](https://codesandbox.io/s/github/doemser/dead-simple-react/tree/main/examples/use-wasd/use-wasd-initial-value)
 
-[preventDefault Example](https://codesandbox.io/s/usewasd-preventdefault-i5jb7x?file=/src/App.js)
+[preventDefault Example](https://codesandbox.io/s/github/doemser/dead-simple-react/tree/main/examples/use-wasd/use-wasd-prevent-default)
 
-[ref Example](https://codesandbox.io/s/usewasd-ref-6d52sn?file=/src/App.js)
-
-[react-three-fiber / r3f Example](https://codesandbox.io/s/use-wasd-hook-in-r3f-s0pomg?file=/src/App.js)
+[ref Example](https://codesandbox.io/s/github/doemser/dead-simple-react/tree/main/examples/use-wasd/use-wasd-ref)
 
 ---
 
 ## Learn
 
-[useWASD source](https://codesandbox.io/s/usewasd-plain-js-source-qm29co?file=/src/use-wasd.js)
+[useWASD vanilla source](https://codesandbox.io/s/github/doemser/dead-simple-react/tree/main/examples/use-wasd/use-wasd-vanilla)
 
 > if you are familiar with typescript, you can also find the source code on [github](https://github.com/doemser/use-wasd/blob/main/src/use-wasd.ts).
