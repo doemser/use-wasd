@@ -1,6 +1,4 @@
-<p align="center"><img src="https://github.com/doemser/dead-simple-react/blob/main/assets/png/use-wasd.png?raw=true"/></p>
-
-# use-wasd
+# <img src="https://github.com/doemser/dead-simple-react/blob/main/assets/png/use-wasd.png?raw=true" alt="use-wad"/>
 
 [![Version](https://img.shields.io/npm/v/use-wasd?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/use-wasd)
 [![Build Size](https://img.shields.io/bundlephobia/minzip/use-wasd?label=bundle%20size&style=flat&colorA=000000&colorB=000000)](<[https://bundlephobia.com/result?p=use-wasd](https://bundlephobia.com/package/use-wasd@2.0.1)>)
